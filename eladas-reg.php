@@ -23,7 +23,7 @@ $ac = $_POST['ac'] ?? '0';
 $property_description = $_POST['property-description'];
 
 
-$host = "https://istvanfarago.github.io/";
+$host = "https://istvanfarago.github.io/Ingatlan/";
 $dbname = "ingatlan";
 $username = "root";
 $password = "";
