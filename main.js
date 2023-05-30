@@ -1,11 +1,4 @@
-/* const collaps = document.querySelectorAll(".collaps");
-collaps.forEach((item) =>
-  item.addEventListener("click", function () {
-    this.classList.toggle("collaps--expand");
-  })
-); */
-
-// split into 3 main parts, common, house and flat..This code renders the correct part
+// split into 5 main parts, flat, house, vacation, land and garage..This code renders the correct part
 
 const flat = document.getElementById("flat");
 const house = document.getElementById("house");
@@ -15,13 +8,14 @@ const garage = document.getElementById("garage");
 
 const propertyType = document.getElementById("property-type");
 
-//Hidden elements by start
+//Hide and render elements by start
 flat.style.display = "none";
 house.style.display = "none";
 land.style.display = "none";
 garage.style.display = "none";
 vacation.style.display = "block";
 
+//rendering elements by type of propery selected
 propertyType.addEventListener("change", () => {
   if (propertyType.value === "Lakás") {
     flat.style.display = "block";
@@ -61,18 +55,6 @@ propertyType.addEventListener("change", () => {
     vacation.style.display = "block";
   }
 });
-
-//not needed as of now - Hiding the common footer if the property type is either house or flat
-
-/* const commonFooter = document.getElementById("common-footer");
-
-propertyType.addEventListener("change", () => {
-  if (propertyType.value === "flat" || propertyType.value === "house") {
-    commonFooter.style.display = "none";
-  } else {
-    commonFooter.style.display = "block";
-  }
-}); */
 
 //Rendering the balcony size for flat and house
 

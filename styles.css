@@ -57,23 +57,6 @@ p {
   margin-top: 0;
 }
 
-@media screen and (min-width: 1024px) {
-  body {
-    font-size: 1.8rem;
-  }
-  h1 {
-    font-size: 8rem;
-  }
-  h2 {
-    font-size: 4rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
-  }
-}
-
 /* Links */
 
 a {
@@ -92,7 +75,7 @@ a {
 }
 
 .list--tick {
-  list-style-image: url(../pictures/tick.svg);
+  list-style-image: url(tick.svg);
   padding-left: 3rem;
   color: var(--color-headings);
 }
@@ -100,12 +83,6 @@ a {
 .list--tick .list__item {
   padding-left: 0.5rem;
   margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .list--tick .list__item {
-    padding-left: 0;
-  }
 }
 
 /* Icons */
@@ -166,16 +143,11 @@ a {
   justify-content: center;
   text-align: center;
   margin: 0 auto;
+  min-width: 150px;
 }
 
 .btn-holder {
   padding-bottom: 2rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .btn {
-    font-size: 1.5rem;
-  }
 }
 
 /* Cards */
@@ -248,15 +220,6 @@ a {
   transform: scale(1.05);
 }
 
-@media screen and (min-width: 1024px) {
-  .tile__title {
-    font-size: 5rem;
-  }
-  .tile__description {
-    font-size: 1.7rem;
-  }
-}
-
 /* Grids */
 
 .grid {
@@ -266,18 +229,6 @@ a {
 
 .grid .grid--1x2 {
   margin: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .grid--1x2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .grid--1x2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* Flex */
@@ -294,11 +245,7 @@ a {
   margin-bottom: 7rem;
 }
 
-.flex-item1 {
-  width: 350px;
-}
-
-.flex-item2 {
+.flex-item {
   width: 350px;
 }
 
@@ -355,6 +302,9 @@ a {
   flex-wrap: wrap;
   padding: 1rem;
   align-items: center;
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px;
 }
 
 .nav__list {
@@ -381,50 +331,10 @@ a {
   color: #fff;
 }
 
-.nav__toggler {
-  opacity: 0.5;
-  transition: box-shadow 0.15s;
-  cursor: pointer;
-}
-
-.nav .nav__toggler {
-  opacity: 1;
-  box-shadow: 0 0 0 3px #666;
-  border-radius: 5px;
-}
-
 .nav__brand {
   width: 10rem;
   opacity: 75%;
   display: flex;
-}
-
-@media screen and (min-width: 768px) {
-  .nav__toggler {
-    display: none;
-  }
-  .nav__list {
-    width: auto;
-    display: flex;
-    font-size: 1.6rem;
-    max-height: 100%;
-    opacity: 1;
-  }
-  .nav__item {
-    border: 0;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .nav__brand {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .nav__brand img {
-    width: 100%;
-    max-width: 150px;
-  }
 }
 
 /* Hero */
@@ -439,26 +349,6 @@ a {
 .hero__image {
   margin-top: 1px;
   width: 100rem;
-}
-
-@media screen and (min-width: 768px) {
-  .hero__content {
-    text-align: left;
-    align-self: center;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .hero .hero__content {
-    padding-top: 0;
-    text-align: left;
-    align-self: center;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__image {
-    display: none;
-  }
 }
 
 /* Tiles Block */
@@ -533,29 +423,6 @@ a {
   display: grid;
 }
 
-@media screen and (min-width: 768px) {
-  .footer {
-    font-size: 1.5rem;
-  }
-  .footer__sections {
-    grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
-  }
-  .footer .collapsible__chevron {
-    display: none;
-  }
-  .footer .collapsible__content {
-    opacity: 1;
-    max-height: 100%;
-  }
-
-  .footer__section {
-    border: 0;
-  }
-  .footer__heading {
-    font-size: 1.6rem;
-  }
-}
-
 /* Kiadas-Eladas.html */
 
 .form-container {
@@ -605,6 +472,7 @@ select {
 .numerical label {
   display: inline-block;
   width: 150px;
+  margin-right: 15px;
 }
 
 .numerical input[type="number"],
@@ -643,9 +511,7 @@ input[type="tel"] {
 
 .numerical span sup {
   font-size: 60%;
-  position: flex;
   top: -1rem;
-  right: 1;
 }
 
 .label-text {
@@ -702,4 +568,122 @@ label[for="date-available"] {
 #date-available {
   text-align: center;
   justify-content: center;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1024px) {
+  .btn .btn-kiadas {
+    min-width: 150px;
+  }
+  .card .card-kiadas .flex-container {
+    min-width: 30rem;
+  }
+
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero .hero__content {
+    padding-top: 0;
+    text-align: left;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav__list {
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+  }
+  .nav__item {
+    border: 0;
+  }
+  .footer {
+    font-size: 1.5rem;
+    opacity: 1;
+    max-height: 100%;
+  }
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
+  }
+
+  .footer__section {
+    border: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+  .footer__heading {
+    font-size: 1.6rem;
+  }
+  .btn .btn-kiadas {
+    min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card .card-kiadas .flex-container {
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .tile__title {
+    font-size: 3rem;
+  }
+
+  .tile__description {
+    font-size: 1.4rem;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .footer__sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__section {
+    margin-bottom: 20px;
+  }
+  .hero__image {
+    display: none;
+  }
+  .nav__brand {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .nav__brand img {
+    width: 100%;
+    max-width: 150px;
+  }
+  .hero__content {
+    text-align: left;
+    align-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+}
+
+.form-container .flex-container .flex-kiadasra {
+  max-width: 100%;
+}
+
+body {
+  /* Other styles for the body element */
+  /* Example styles: */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

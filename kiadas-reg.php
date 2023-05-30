@@ -52,12 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // The "Land" button was pressed
         $type_of_property = "Telek";
     } elseif (isset($_POST['garage-submit'])) {
-        // The "Land" button was pressed
+        // The "Garage" button was pressed
         $type_of_property = "Garázs";
     } else {
-        // No button was pressed or form not submitted
-        // Handle the default case or show an error message
-        // You can choose a default value for $type_of_property or display an error message
         $type_of_property = "Nyaraló";
     }
 }
